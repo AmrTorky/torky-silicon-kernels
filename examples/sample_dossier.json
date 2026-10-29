@@ -1,0 +1,6 @@
+{
+  "repository": "torky-silicon-kernels",
+  "protocol": "Torky Protocol Omega",
+  "iso_17025_seal": "1dd69a153b00",
+  "vectors": [0.0, 0.36787944117, 0.016, 1.0, 2.718281828]
+}

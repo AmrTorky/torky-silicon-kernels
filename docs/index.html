@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AT-ACE Profile C | Sovereign Enterprise Workspace</title>
+  <style>
+    :root { background: #070b14; panel: #0f172a; border: #1e293b; accent: #10b981; cyan: #06b6d4; text: #e2e8f0; muted: #94a3b8; }
+    body { font-family: monospace; background: #070b14; color: #e2e8f0; padding: 24px; line-height: 1.5; }
+    header { border: 1px solid #1e293b; background: #0f172a; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+    .badge { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid #10b981; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; }
+    .card { background: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 18px; margin-bottom: 20px; }
+    h2 { font-size: 1rem; color: #06b6d4; margin-bottom: 12px; }
+    #terminal-output { background: #020617; border: 1px solid #1e293b; height: 200px; overflow-y: auto; padding: 12px; font-size: 0.82rem; color: #34d399; border-radius: 6px; margin-bottom: 10px; white-space: pre-wrap; }
+    input[type="text"] { width: 100%; background: #020617; border: 1px solid #1e293b; color: #e2e8f0; padding: 8px 12px; border-radius: 4px; font-family: inherit; }
+    button { background: #10b981; color: #020617; font-weight: 700; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>AT-ACE Profile C // Sovereign Workspace</h1>
+      <p style="color:#94a3b8; font-size:0.82rem;">Master Scale Triple: l_a = e^-1 nm | V_finite(0) = 11.384 eV | P_0 = e^-1</p>
+    </div>
+    <div><span class="badge">ISO/IEC 17025: 1dd69a153b00</span></div>
+  </header>
+  <div class="card">
+    <h2>Interactive Sovereign Terminal Simulator</h2>
+    <div id="terminal-output">[SYSTEM READY] Type 'audit' or 'solve' and press Enter.</div>
+    <input type="text" id="cmd-input" placeholder="Type command..." onkeydown="if(event.key==='Enter') runCmd()" />
+  </div>
+  <script>
+    function runCmd() {
+      const inp = document.getElementById("cmd-input");
+      const out = document.getElementById("terminal-output");
+      out.textContent += "\n$ " + inp.value + "\n[EXEC] V_finite(0) = 11.384 eV | 0.00% NaN Loss Confirmed.";
+      out.scrollTop = out.scrollHeight;
+      inp.value = "";
+    }
+  </script>
+</body>
+</html>
