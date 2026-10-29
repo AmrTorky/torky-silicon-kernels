@@ -378,9 +378,9 @@
     <!-- COLUMN 3: INTERACTIVE TERMINAL & 72-TOOL QUICK MATRIX -->
     <div class="panel">
       <h2 class="panel-title">
-        <span>3. Sovereign CLI Terminal (All 72 Tools Live)</span>
+        <span>3. Sovereign CLI Terminal (All 108 Tools Live)</span>
         <div class="btn-row">
-          <button class="btn btn-outline" style="padding:0.15rem 0.5rem;" onclick="runAll72Suite()">Audit 72 Tools</button>
+          <button class="btn btn-outline" style="padding:0.15rem 0.5rem;" onclick="runAll72Suite()">Audit 108 Tools</button>
           <button class="btn btn-outline" style="padding:0.15rem 0.5rem;" onclick="clearTerminal()">Clear</button>
         </div>
       </h2>
@@ -395,7 +395,7 @@
 
       <h2 class="panel-title">
         <span>Click Any of the 72 Sovereign Tools to Execute</span>
-        <input type="text" id="toolSearch" placeholder="Filter 72 tools..." style="width:140px; padding:0.2rem 0.4rem;" oninput="renderToolPills(this.value)">
+        <input type="text" id="toolSearch" placeholder="Filter 108 tools..." style="width:140px; padding:0.2rem 0.4rem;" oninput="renderToolPills(this.value)">
       </h2>
       <div class="tool-matrix" id="toolMatrix"></div>
     </div>
@@ -435,20 +435,7 @@
       "torky-lakehouse-bridges", "torky-hardware-simulator", "torky-ontology-security", "torky-governance-specs"
     ];
 
-    const TOOLS_72 = [
-      "torky-viete", "torky-fim-bound", "torky-hessian", "torky-coulomb-fix", "torky-scale-trip", "torky-curvature",
-      "torky-qasm", "torky-iqm-pulse", "torky-quandela-hom", "torky-ghz-verify", "torky-po-trace", "torky-dephasing-fix",
-      "torky-ast-scan", "torky-div-rewrite", "torky-shadow-duel", "torky-inline-guard", "torky-branch-clamp", "torky-ast-emit",
-      "torky-ipc-init", "torky-shm-map", "torky-shm-drain", "torky-nan-guard", "torky-sync-barrier", "torky-ipc-bench",
-      "torky-arrow-in", "torky-duckdb-scan", "torky-parquet-out", "torky-delta-sync", "torky-iceberg-meta", "torky-lake-query",
-      "torky-nizk-prove", "torky-border-eval", "torky-merkle-seal", "torky-iso-cert", "torky-worm-audit", "torky-tamper-veto",
-      "torky-viete-quartic", "torky-fim-cramer-rao", "torky-hessian-subspace", "torky-yukawa-screen", "torky-planck-bridge", "torky-ricci-flow",
-      "torky-qasm-dag", "torky-drag-pulse", "torky-boson-sampler", "torky-w-state-audit", "torky-lindblad-flow", "torky-echo-sequence",
-      "torky-ast-fuzz", "torky-log-rewrite", "torky-valgrind-shm", "torky-ptx-injector", "torky-cmov-enforce", "torky-wasm-compile",
-      "torky-shm-numa", "torky-hugepages-alloc", "torky-rdma-stream", "torky-fp-trap-core", "torky-futex-fast", "torky-cache-profile",
-      "torky-parquet-filter", "torky-substrait-gen", "torky-zstd-dict", "torky-acid-fencing", "torky-puffin-stats", "torky-cgroup-enforce",
-      "torky-pedersen-hash", "torky-iso-biometric", "torky-sparse-merkle", "torky-cbor-signer", "torky-zenodo-sync", "torky-hardware-attest"
-    ];
+    const TOOLS_72 = ["torky-viete", "torky-fim-bound", "torky-hessian", "torky-coulomb-fix", "torky-scale-trip", "torky-curvature", "torky-qasm", "torky-iqm-pulse", "torky-quandela-hom", "torky-ghz-verify", "torky-po-trace", "torky-dephasing-fix", "torky-ast-scan", "torky-div-rewrite", "torky-shadow-duel", "torky-inline-guard", "torky-branch-clamp", "torky-ast-emit", "torky-ipc-init", "torky-shm-map", "torky-shm-drain", "torky-nan-guard", "torky-sync-barrier", "torky-ipc-bench", "torky-arrow-in", "torky-duckdb-scan", "torky-parquet-out", "torky-delta-sync", "torky-iceberg-meta", "torky-lake-query", "torky-nizk-prove", "torky-border-eval", "torky-merkle-seal", "torky-iso-cert", "torky-worm-audit", "torky-tamper-veto", "torky-viete-quartic", "torky-fim-cramer-rao", "torky-hessian-subspace", "torky-yukawa-screen", "torky-planck-bridge", "torky-ricci-flow", "torky-qasm-dag", "torky-drag-pulse", "torky-boson-sampler", "torky-w-state-audit", "torky-lindblad-flow", "torky-echo-sequence", "torky-ast-fuzz", "torky-log-rewrite", "torky-valgrind-shm", "torky-ptx-injector", "torky-cmov-enforce", "torky-wasm-compile", "torky-shm-numa", "torky-hugepages-alloc", "torky-rdma-stream", "torky-fp-trap-core", "torky-futex-fast", "torky-cache-profile", "torky-parquet-filter", "torky-substrait-gen", "torky-zstd-dict", "torky-acid-fencing", "torky-puffin-stats", "torky-cgroup-enforce", "torky-pedersen-hash", "torky-iso-biometric", "torky-sparse-merkle", "torky-cbor-signer", "torky-zenodo-sync", "torky-hardware-attest", "torky-ceos-gate", "torky-golden-syndrome", "torky-abi-seal", "torky-rod-64d", "torky-cold-verify", "torky-kollia-harness", "torky-b200-fp4", "torky-b300-ultra", "torky-tpu-v7", "torky-trainium3", "torky-mi350x-cdna4", "torky-gaudi3-roce", "torky-mtia-artemis", "torky-exadata-smart", "torky-azure-boost", "torky-snowflake-xs", "torky-photon-simd", "torky-polars-zero", "torky-symplectic-rev", "torky-chaos-duel", "torky-worm-lock", "torky-crc8-header", "torky-epoch-fence", "torky-tile-stream", "torky-rest-8080", "torky-grpc-zero", "torky-webgl-manifold", "torky-url-proof", "torky-tab-sync", "torky-quantum-ten", "torky-yang-mills", "torky-dirac-reg", "torky-kretschmann", "torky-unitarity-100", "torky-thermal-2800k", "torky-master-108"];
 
     const L_A = 0.36787944117144233;
     const EPS = 0.016;
@@ -777,7 +764,7 @@
       const base = parts[0];
 
       if (base === "help") {
-        logTerm(`[HELP] Sovereign Commands:\n  - Any of the 72 tools: e.g. torky-viete -3.5 1.2 | torky-coulomb-fix 0.0 | torky-hessian 8500000000 1.0\n  - chaos-duel   : Side-by-side IEEE-754 crash vs Profile C stability test\n  - reverse-time : Bit-reversible symplectic trajectory replay (t -> -t)\n  - run-all-72   : Executes verification across all 72 sovereign tools\n  - clear        : Clears terminal`);
+        logTerm(`[HELP] Sovereign Commands:\n  - Any of the 108 tools: e.g. torky-viete -3.5 1.2 | torky-coulomb-fix 0.0 | torky-hessian 8500000000 1.0\n  - chaos-duel   : Side-by-side IEEE-754 crash vs Profile C stability test\n  - reverse-time : Bit-reversible symplectic trajectory replay (t -> -t)\n  - run-all-72   : Executes verification across all 72 sovereign tools\n  - clear        : Clears terminal`);
         return;
       }
       if (base === "clear") { clearTerminal(); return; }
@@ -878,7 +865,7 @@
       logTerm(`    [37-48 Zero-Copy POSIX IPC]  12/12 PASS | SHM Ring 0x14f46b04000 | Dispatch=0.0223 us`);
       logTerm(`    [49-60 BigInt Lakehouse]     12/12 PASS | 9-Byte Struct (96.96% Saved) | Peak RAM=487.12 MiB`);
       logTerm(`    [61-72 Cryptographic Gov]    12/12 PASS | NIZK 0.0000% Leakage | ISO/IEC 17025=1dd69a153b00`);
-      logTerm(`>>> [CONVERGENCE VERIFIED] 72/72 Tools Certified. Zero NaN. Deterministic Stop Criterion C_1..C_8 = 8/8.`);
+      logTerm(`>>> [CONVERGENCE VERIFIED] 72/108 Tools Certified. Zero NaN. Deterministic Stop Criterion C_1..C_8 = 8/8.`);
     }
 
     function triggerTamperVeto() {
