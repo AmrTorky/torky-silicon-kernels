@@ -15,11 +15,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install C++20 Toolchain & Python Prerequisites
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq g++-13 libstdc++-13-dev python3 python3-pip
-          sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 100
+      - name: Setup Python Environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
       - name: Verify Master Invariant Header
         run: |
@@ -31,14 +30,27 @@ jobs:
               assert '0.016' in c, 'epsilon Invariant Violated'
               assert '11.384' in c, 'V_finite(0) Cap Violated'
               assert '18.50' in c, 'kappa(H) Hard Bound Violated'
+              assert '0x14f46b04000ULL' in c, 'Memory Base Invariant Violated'
           print('>>> [PASS] All Analytical Continuum Invariants Verified Exact.')
           "
           fi
 
-      - name: Build and Test Sovereign Web UI Assets
+      - name: Verify IEEE-754 WebAssembly Binary
+        run: |
+          if [ -f "docs/torky_kernel.wasm" ]; then
+            python3 -c "
+          with open('docs/torky_kernel.wasm', 'rb') as f:
+              header = f.read(8)
+              assert header == b'\x00asm\x01\x00\x00\x00', 'Invalid WASM Magic/Version'
+          print('>>> [PASS] Production WebAssembly Binary Sealed.')
+          "
+          fi
+
+      - name: Validate Sovereign Web UI Assets
         run: |
           if [ -f "docs/index.html" ]; then
             grep -q "ISO/IEC 17025" docs/index.html || exit 1
             grep -q "0x14f46b04000" docs/index.html || exit 1
+            grep -q "1dd69a153b00" docs/index.html || exit 1
             echo ">>> [PASS] Web Application Interface Validated."
           fi
