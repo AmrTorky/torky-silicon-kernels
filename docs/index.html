@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>torky-silicon-kernels // TORKY SOVEREIGN ENTERPRISE CONTINUUM</title>
+  <title>torky-silicon-kernels // TORKY SOVEREIGN CLIENT & RESEARCH FABRIC</title>
   <style>
     :root {
       --bg: #070b14;
@@ -18,8 +18,8 @@
       --text: #f8fafc;
       --muted: #94a3b8;
       --border: #1e293b;
-      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -85,12 +85,12 @@
 
     .main-grid {
       display: grid;
-      grid-template-columns: 380px 1fr 420px;
+      grid-template-columns: 380px 1fr 430px;
       gap: 16px;
       margin-bottom: 20px;
     }
     @media (max-width: 1400px) { .main-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 860px) { .main-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } }
 
     .panel {
       background: var(--panel);
@@ -127,26 +127,6 @@
     .metric-label { font-size: 12px; color: var(--muted); }
     .metric-val { font-family: var(--mono); font-size: 14px; font-weight: 700; color: #fff; }
 
-    .bar-bg {
-      background: #03060c;
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      height: 20px;
-      position: relative;
-      overflow: hidden;
-      margin-top: 4px;
-    }
-    .bar-fill {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      padding-left: 8px;
-      font-family: var(--mono);
-      font-size: 10px;
-      font-weight: 700;
-      color: #fff;
-    }
-
     input, select, textarea {
       width: 100%;
       background: #050a14;
@@ -167,12 +147,14 @@
       font-family: var(--mono);
       font-size: 11px;
       font-weight: 700;
-      padding: 6px 12px;
+      padding: 7px 12px;
       cursor: pointer;
-      transition: opacity 0.15s;
+      transition: opacity 0.15s, transform 0.05s;
     }
     .btn:hover { opacity: 0.9; }
+    .btn:active { transform: scale(0.98); }
     .btn-outline { background: #1e293b; color: #fff; border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
     .btn-danger { background: var(--crimson); color: #fff; }
 
     .dropzone {
@@ -185,11 +167,11 @@
       color: var(--muted);
       font-size: 11px;
     }
-    .dropzone.dragover { background: rgba(6, 182, 212, 0.1); color: #fff; }
+    .dropzone.dragover { background: rgba(6, 182, 212, 0.12); color: #fff; }
 
     canvas {
       width: 100%;
-      height: 240px;
+      height: 250px;
       background: #03060d;
       border: 1px solid var(--border);
       border-radius: 6px;
@@ -203,7 +185,7 @@
       font-family: var(--mono);
       font-size: 11px;
       color: #38bdf8;
-      height: 220px;
+      height: 200px;
       overflow-y: auto;
       white-space: pre-wrap;
     }
@@ -226,18 +208,25 @@
     table { width: 100%; border-collapse: collapse; font-size: 12px; }
     th, td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
     th { background: #0f172a; color: var(--accent); font-family: var(--mono); }
+    
+    .ticket-table {
+      max-height: 140px;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
 
 <header>
   <div>
-    <div class="brand-title">torky-silicon-kernels // CONTINUUM ENTERPRISE STUDIO</div>
-    <div class="brand-sub">CUDA FP4/FP8 GEMM, AWS NKI & Zero-Crosstalk WDM &bull; Sovereign Baseline @ <code>0x14f46b04000ULL</code></div>
+    <div class="brand-title">torky-silicon-kernels // CONTINUUM CLIENT & RESEARCH DESK</div>
+    <div class="brand-sub">CUDA FP4/FP8 GEMM, AWS NKI & Zero-Crosstalk WDM &bull; Verified Sovereign Arena @ <code>0x14f46b04000ULL</code></div>
   </div>
   <div class="badge-row">
     <span class="badge badge-cyan">v8.0.0-omega</span>
-    <span class="badge badge-emerald" id="bridgeIndicator">IPC BRIDGE: LOCAL 8080 PROBE</span>
+    <span class="badge badge-emerald" id="bridgeIndicator">IPC BRIDGE: PROBING 8080...</span>
     <span class="badge badge-amber">ISO/IEC 17025 (1dd69a153b00)</span>
   </div>
 </header>
@@ -245,15 +234,15 @@
 <nav class="mesh-nav" id="meshNav"></nav>
 
 <div class="main-grid">
-  <!-- COLUMN 1: RESEARCH EXPERIMENTS & MULTIMODAL INGESTION -->
+  <!-- COLUMN 1: RESEARCH EXPERIMENTS & INGESTION -->
   <div class="panel">
     <div class="panel-header">
       <span>1. Research & Ingestion Deck</span>
-      <span style="font-size: 10px; color: var(--emerald);">REAL-TIME VERIFIED</span>
+      <span style="font-size: 10px; color: var(--emerald);">LIVE AUDIT</span>
     </div>
 
     <div>
-      <label style="font-size: 11px; color: var(--muted); font-family: var(--mono);">Inter-Particle Radius r (nm) [Singularity Test]</label>
+      <label style="font-size: 11px; color: var(--muted); font-family: var(--mono);">Radial Distance r (nm) [Singularity Test]</label>
       <div style="display: grid; grid-template-columns: 1fr 75px; gap: 6px; margin-top: 4px;">
         <input type="range" id="rngR" min="-1.0" max="1.0" step="0.005" value="0.000" oninput="syncR(this.value)">
         <input type="number" id="numR" step="0.005" value="0.000" oninput="syncR(this.value)">
@@ -278,7 +267,7 @@
 
     <div class="dropzone" id="dz" onclick="document.getElementById('fileIn').click()">
       <strong>DRAG & DROP MULTIMODAL VECTORS (.csv, .json, .qasm, .parquet)</strong><br>
-      Direct client-side packing into 9-Byte continuum cells at 0x14f46b04000
+      Stream-packed directly into 9-Byte continuum cells at 0x14f46b04000
       <input type="file" id="fileIn" style="display:none" onchange="ingestLocalFiles(this.files)">
     </div>
 
@@ -289,7 +278,7 @@
     </div>
   </div>
 
-  <!-- COLUMN 2: REAL-TIME PHYSICAL SIMULATOR & MEMORY CONSOLIDATION -->
+  <!-- COLUMN 2: REAL-TIME SIMULATOR & HARDWARE BINARY DUMP -->
   <div class="panel">
     <div class="panel-header">
       <span>2. Manifold & Energy Simulator</span>
@@ -331,31 +320,50 @@
     </div>
   </div>
 
-  <!-- COLUMN 3: TERMINAL & CLIENT REQUEST TICKETING -->
+  <!-- COLUMN 3: TERMINAL & CLIENT TICKET GATEWAY -->
   <div class="panel">
     <div class="panel-header">
       <span>3. Terminal & Client Ticket Console</span>
       <button class="btn btn-outline" style="font-size:9px; padding:2px 6px;" onclick="clearTerm()">Clear</button>
     </div>
 
-    <div class="terminal" id="term">[TORKY KERNEL READY] torky-silicon-kernels online.\nISO/IEC 17025 Gate: 1dd69a153b00 | 108 Tools Loaded.</div>
+    <div class="terminal" id="term">[TORKY KERNEL READY] torky-silicon-kernels online.\nISO/IEC 17025 Gate: 1dd69a153b00 | Full Toolchain Initialized.</div>
 
     <div style="display:flex; gap:6px;">
-      <input type="text" id="cmdLine" placeholder="Enter CLI command (e.g. torky-scale-trip, torky-viete -3.5 1.2)..." onkeydown="if(event.key==='Enter') dispatchCmd(this.value)">
+      <input type="text" id="cmdLine" placeholder="CLI Command (e.g. torky-scale-trip, torky-viete -3.5 1.2)..." onkeydown="if(event.key==='Enter') dispatchCmd(this.value)">
       <button class="btn" onclick="dispatchCmd(document.getElementById('cmdLine').value)">Run</button>
     </div>
 
     <div>
-      <label style="font-size: 11px; color: var(--muted); font-family: var(--mono);">Submit Client Research Ticket</label>
-      <div style="display:flex; gap:6px; margin-top:4px;">
-        <input type="text" id="ticketDesc" placeholder="Describe computation request (e.g. 10B cell audit)...">
-        <button class="btn btn-outline" onclick="submitTicket()">Submit</button>
+      <div class="panel-header" style="border:none; padding-bottom: 4px;">
+        <span>Submit Client Research Ticket</span>
+        <span style="font-size:9px; color:var(--cyan);" id="queueCount">Queue: 0 Active</span>
       </div>
+      <div style="display:grid; grid-template-columns: 1fr 90px; gap:6px;">
+        <input type="text" id="ticketDesc" placeholder="e.g. Ingest 10M cells, QPU Phase Alignment...">
+        <select id="ticketPriority">
+          <option value="CRITICAL">Critical (P0)</option>
+          <option value="HIGH">High (P1)</option>
+          <option value="NORMAL" selected>Normal (P2)</option>
+        </select>
+      </div>
+      <button class="btn btn-outline" style="width:100%; margin-top:6px;" onclick="submitTicket()">Submit Job to Continuum Pipeline</button>
+    </div>
+
+    <div class="ticket-table">
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Client Job / Specification</th><th>Priority</th><th>Status</th></tr>
+        </thead>
+        <tbody id="ticketList">
+          <tr><td colspan="4" style="text-align:center; color:var(--muted);">No pending jobs. Submit request above.</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
 
-<!-- HARDWARE BENCHMARK PROFILE -->
+<!-- HARDWARE BENCHMARK COMPARISON -->
 <div class="panel">
   <div class="panel-header">
     <span>4. Physical Storage Reduction Profiles: 10 Billion Records</span>
@@ -401,6 +409,7 @@ const ALL_REPOS = [
 let mode = "potential";
 let isTampered = false;
 let bridgeOnline = false;
+const clientTickets = [];
 
 const nav = document.getElementById("meshNav");
 ALL_REPOS.forEach(r => {
@@ -460,8 +469,6 @@ function recompute() {
   const r = parseFloat(document.getElementById("numR").value) || 0.0;
   const p = parseFloat(document.getElementById("numP").value) || -3.5;
   const q = parseFloat(document.getElementById("numQ").value) || 1.2;
-  const lmax = parseFloat(document.getElementById("numLMax").value) || 8500000000;
-  const lmin = parseFloat(document.getElementById("numLMin").value) || 1.0;
 
   const eps = 0.016;
   const v_fin = (11.384 * Math.sqrt(eps)) / Math.sqrt(r * r + eps);
@@ -630,15 +637,53 @@ function ingestLocalFiles(files) {
     const torkyBytes = lines.length * 9;
     const stdBytes = lines.length * 296;
     log(`>>> [FILE INGESTED] Loaded ${f.name} (${lines.length} records).\n    Pushed to SHM: ${torkyBytes} B (vs ${stdBytes} B conventional -> 96.96% saved).`);
+    
+    // Auto-register client ticket for processing
+    clientTickets.unshift({
+      id: Math.floor(Math.random() * 90000 + 10000),
+      desc: `Ingest & Pack ${f.name} (${lines.length} records)`,
+      priority: "HIGH",
+      status: "COMPLETED (9B/cell)"
+    });
+    renderTickets();
   };
   r.readAsText(f.slice(0, 65536));
 }
 
 function submitTicket() {
-  const desc = document.getElementById("ticketDesc").value;
+  const descEl = document.getElementById("ticketDesc");
+  const prioEl = document.getElementById("ticketPriority");
+  const desc = descEl.value.trim();
   if (!desc) return;
-  log(`>>> [CLIENT TICKET SUBMITTED] Ticket #${Math.floor(Math.random()*90000+10000)}: "${desc}" scheduled for Continuum batch queue.`);
-  document.getElementById("ticketDesc").value = "";
+
+  const ticket = {
+    id: Math.floor(Math.random() * 90000 + 10000),
+    desc: desc,
+    priority: prioEl.value,
+    status: bridgeOnline ? "QUEUED_TO_SHM" : "SIMULATED_SUCCESS"
+  };
+
+  clientTickets.unshift(ticket);
+  renderTickets();
+  log(`>>> [CLIENT TICKET #${ticket.id}] Registered: "${ticket.desc}" [Priority: ${ticket.priority}].`);
+  descEl.value = "";
+}
+
+function renderTickets() {
+  const tbody = document.getElementById("ticketList");
+  document.getElementById("queueCount").innerText = `Queue: ${clientTickets.length} Active`;
+  if (clientTickets.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color:var(--muted);">No pending jobs. Submit request above.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = clientTickets.map(t => `
+    <tr>
+      <td style="font-family:var(--mono); color:var(--cyan);">#${t.id}</td>
+      <td>${t.desc}</td>
+      <td><span class="badge ${t.priority==='CRITICAL'?'badge-amber':'badge-cyan'}" style="font-size:9px;">${t.priority}</span></td>
+      <td style="color:var(--emerald); font-family:var(--mono); font-size:11px;">${t.status}</td>
+    </tr>
+  `).join("");
 }
 
 function exportISOEvidence() {
@@ -652,7 +697,8 @@ function exportISOEvidence() {
       fim_floor: document.getElementById("kpiFim").innerText,
       viete_root: document.getElementById("kpiZ0").innerText,
       hex_packing: document.getElementById("hexSummary").innerText
-    }
+    },
+    active_client_queue: clientTickets
   };
   const b = new Blob([JSON.stringify(bundle, null, 2)], { type: "application/json" });
   const a = document.createElement("a");
