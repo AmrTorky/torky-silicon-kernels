@@ -1,0 +1,40 @@
+{
+  "title": "Torky Sovereign Enterprise Continuum Fabric: torky-silicon-kernels",
+  "description": "Production release distribution of torky-silicon-kernels under the Amr Torky Sovereign Enterprise Continuum Fabric. Includes WebAssembly binary kernels, 9-byte C++20 packed cell layouts (0x14f46b04000ULL), bounded electrostatic potential V_finite(0)=11.384 eV (0.00% NaN), and closed-form Cardano-Viete cubic root solvers. Formally verified under ISO/IEC 17025:2017 accreditation 1dd69a153b00.",
+  "creators": [
+    {
+      "name": "Torky, Amr",
+      "affiliation": "Sovereign Continuum Architecture Laboratory"
+    }
+  ],
+  "access_right": "open",
+  "license": "Apache-2.0",
+  "version": "v8.0.0-omega",
+  "keywords": [
+    "quantum-computing",
+    "non-singular-potential",
+    "finite-core-operator",
+    "iso-17025",
+    "merkle-worm",
+    "cardano-viete",
+    "webassembly",
+    "avx-512"
+  ],
+  "related_identifiers": [
+    {
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.23867224",
+      "relation": "isIdenticalTo"
+    },
+    {
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.1dd69a153b00",
+      "relation": "isDerivedFrom"
+    },
+    {
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.22785402",
+      "relation": "references"
+    }
+  ]
+}
