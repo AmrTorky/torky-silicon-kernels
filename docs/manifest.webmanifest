@@ -1,0 +1,9 @@
+{
+  "name": "Torky Sovereign Studio \u2014 torky-silicon-kernels",
+  "short_name": "SILICON-KERNELS",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#04070d",
+  "theme_color": "#00f2fe",
+  "description": "144-Core Amr Torky Autopoietic Continuum Studio (torky-silicon-kernels)"
+}
