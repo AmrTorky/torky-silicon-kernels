@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.16)
-project(torky-silicon-kernels LANGUAGES CXX)
+project(torky-silicon-kernels CXX)
+
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_compile_options(-O3 -mavx2 -march=native -Wall -Wextra)
 include_directories(include)
-add_executable(torky-silicon-bench src/torky_cli_kernel.cpp)
-target_compile_options(torky-silicon-bench PRIVATE -O3 -Wall -pthread)
+
+add_executable(test_silicon tests/test_silicon_kernels.cpp)
