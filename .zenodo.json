@@ -1,26 +1,7 @@
 {
-  "title": "Amr Torky Autopoietic Continuum Engine (AT-ACE) - Sovereign Subsystem Engine",
+  "title": "Amr Torky Autopoietic Continuum Engine - Master Engine Appliance",
   "conceptdoi": "10.5281/zenodo.22785402",
-  "creators": [
-    {
-      "name": "Torky, Amr",
-      "orcid": "0009-0003-6539-8267",
-      "affiliation": "Amr Torky Institute for Theory of Everything & Theory of Every Code"
-    }
-  ],
-  "description": "Production release of the Amr Torky Autopoietic Continuum Engine (AT-ACE / Torky-Omega Engine v24.0.0-GA). Implements non-singular continuous manifold regularization, Cardano-Viète polynomial complexity collapse algorithms, zero-entropy thermodynamic reset, and real-time autopoietic condition clamping loops under ISO/IEC 17025 certification (Cert: 1dd69a153b00).",
-  "access_right": "open",
-  "license": "apache-2.0",
-  "keywords": [
-    "Amr Torky",
-    "Theory of Every Code",
-    "Cardano Fixed-Point Engine",
-    "Finite-Core Regularizer",
-    "Torky Protocol Omega",
-    "ISO-IEC 17025",
-    "Non-Singular Electrodynamics",
-    "Thermodynamic Reset",
-    "Zenodo Open Science"
-  ],
-  "upload_type": "software"
+  "creators": [{"name": "Torky, Amr", "orcid": "0009-0003-6539-8267", "affiliation": "Amr Torky Institute for Theory of Everything & Theory of Every Code"}],
+  "description": "Production release of the Torky Engine Appliance and local Python IPC daemon bridge for deterministic benchmarks and hardware simulation (v24.0.0-GA).",
+  "access_right": "open", "license": "apache-2.0", "upload_type": "software"
 }
