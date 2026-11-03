@@ -6,6 +6,7 @@
 
 namespace torky::sovereign {
     inline constexpr double V_FINITE_ZERO_EV = 11.384;
+    constexpr const char* ISO_17025_CERT     = "1dd69a153b00";
 
     #pragma pack(push, 1)
     struct TorkyCellDtype {
